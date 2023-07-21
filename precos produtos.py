@@ -18,16 +18,17 @@ def sorveteria(sabores): ## puxando a array
         ## limitando os valores de entrada aos que preciso
         saborSorv = input("Entre com o sabor desejado (tr,es,pr): ");
         ## se o valor de entrada está entre os que procuro
-        if saborSorv not in sabores:  # Verifica se o sabor é válido
+        if saborSorv not in sabores:  # condiçao excludente
             print("Sabor de Sorvete Inválido. Tente novamente.")
             continue 
         if saborSorv in sabores:
             ## perguntando sobre o numero de bolas
             numeroBolas = int(input("Entre com o número de bolas de sorvete desejado (1/2/3): "))
-            if numeroBolas not in (1,2,3):  # Verifica se o sabor é válido
+            if numeroBolas not in (1,2,3):  # Verifica se o numero de bolas
                 print("Numero de bolas inválido. Tente novamente.")
                 continue 
             if numeroBolas in (1, 2, 3):
+                ## tratando os diferentes valores para diferentes tipos de sorvete etc
                 trad = "TRADICIONAL";
                 espe = "ESPECIAL";
                 prem = "PREMIUM";
@@ -67,7 +68,7 @@ def sorveteria(sabores): ## puxando a array
                 if simNao != "s" and simNao != "S":
                     print("O total da compra ficou em: R${},00".format(valorFinal));
                     break
-              
+## Print das boas vindas              
 print(boasvindas);
 print(len(strX)*"-");
 print(strX);
@@ -76,5 +77,5 @@ print(str2);
 print(str3);
 print(len(strX)*"-");
 
-
+## Chamando a funçao
 sorveteria(sabores)
