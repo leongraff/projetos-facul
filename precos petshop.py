@@ -42,14 +42,35 @@ def cachorro_peso():
         except ValueError:
             print("Valor inválido, tente novamente.")
 
-def cachorro_pelo();
-    ## Multiplicadores:
+
+def cachorro_pelo():
+    ## Multiplicador
+    pelo_curto = 1
+    pelo_medio = 1.5
+    pelo_longo = 2
+    mult = 0
+    
     while True:
         try:
-            pelo_dog = int(input("Digite o tipo de pelo do seu cachorro: "));
-        
+            pelo_dog = input("Digite o tipo de pelo do seu cachorro: ")
+            if pelo_dog.lower() == "curto":
+                mult = pelo_curto
+                break  # Se o valor for válido, encerra o loop e retorna o multiplicador
+            elif pelo_dog.lower() == "médio" or pelo_dog.lower() == "medio":
+                mult = pelo_medio
+                break  # Se o valor for válido, encerra o loop e retorna o multiplicador
+            elif pelo_dog.lower() == "longo":
+                mult = pelo_longo
+                break  # Se o valor for válido, encerra o loop e retorna o multiplicador
+            else:
+                print("Digite um valor válido.")  # Valor inválido, imprime mensagem de erro e continua o loop
         except ValueError:
-            print("Digite um valor válido.")
+            print("Digite um valor válido.")  # Caso ocorra uma exceção, imprime mensagem de erro e continua o loop
+
+    print(mult)
+    return mult  # Imprime o multiplicador válido
+
 
 
 cachorro_peso();
+cachorro_pelo();
