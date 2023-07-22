@@ -1,15 +1,16 @@
 # Sistema de cobrança de banho para um petshop
-# variaveis: peso, valor, pelo (multiplicador), adicionais
-# adicionais(unhas, dentes, orelhas, nada (?))
-#
-# valor final = base * multiplicador + extra
+
 nomeAluno = "Leon Graff"
 print("Bem vindo a Pet Shop do {}".format(nomeAluno))
+
+## achei interessante nesse caso em especial tentar trabalhar com tuplas para pegar os preços dos intervalos de peso
 
 pesos_precos = {(3, 3): 10, (3, 10): 50, (10, 30): 60, (30, 50): 70}
 
 
 ## funcao para fazer a chamada de preco no intervalo de pesos
+
+
 def obterPreco(peso, tabelaPreco):
     ## intervalo aqui recebe a tupla, preco recebe o valor atribuido a tupla
     for intervalo, preco in tabelaPreco.items():
@@ -19,12 +20,10 @@ def obterPreco(peso, tabelaPreco):
     return None
 
 
-## como criei uma função para obter preço ali em cima
-## uso aqui uma função para inserir o peso e retornar o preço através da função
+# função para retornar o preço de acordo com o peso.
 
 
 def cachorro_peso():
-    ## aqui ele deixa um loop antes do try except, obrigatorio?
     peso_dog = 0
     while True:
         try:
@@ -45,14 +44,18 @@ def cachorro_peso():
             print("Por favor, entre com o peso do cachorro novamente.")
 
 
+# função para retornar o multiplicador correto e receber o input dos pelos
+
+
 def cachorro_pelo():
-    ## Multiplicador
+    ## definindo os multiplicadores
     pelo_curto = 1
     pelo_medio = 1.5
     pelo_longo = 2
     mult = 0
 
     while True:
+        # printando as opções disponíveis
         print("Entre com o pelo do cachorro")
         print("c - Pelo curto")
         print("m - Pelo médio")
@@ -73,8 +76,11 @@ def cachorro_pelo():
         except ValueError:
             print("Digite um valor válido.")
 
-    print(mult)
+    # print(mult)
     return mult  # Imprime o multiplicador válido
+
+
+# função que calcula os serviços adicionais
 
 
 def cachorro_extra():
@@ -101,6 +107,9 @@ def cachorro_extra():
                     break
         except ValueError:
             print("Por favor digite um valor válido.")
+
+
+# calculando o valor total usando os returns de cada função
 
 
 def main():
